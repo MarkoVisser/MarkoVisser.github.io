@@ -1,0 +1,481 @@
+/* ============================================
+   Design tokens
+   Source: UI/UX Pro Max — "Developer Tool / IDE"
+   palette + "Developer Mono" type pairing
+   ============================================ */
+:root {
+  --bg: #0F172A;
+  --bg-elevated: #1B2336;
+  --bg-elevated-hover: #232C42;
+  --fg: #F8FAFC;
+  --fg-muted: #94A3B8;
+  --border: #2A3550;
+  --accent: #22C55E;
+  --accent-fg: #0F172A;
+  --danger: #EF4444;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  --radius: 8px;
+  --max-width: 960px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 var(--space-3);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
+h3 { font-size: 1.125rem; }
+
+p { margin: 0 0 var(--space-3); max-width: 68ch; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* ============================================
+   Layout
+   ============================================ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 var(--space-2);
+}
+
+section {
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+section:last-of-type { border-bottom: none; }
+
+/* ============================================
+   Header / nav
+   ============================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--fg);
+  font-size: 1rem;
+}
+.logo:hover { text-decoration: none; color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  gap: var(--space-5);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+.nav-links a:hover { color: var(--fg); text-decoration: none; }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-2);
+  color: var(--fg);
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: flex; align-items: center; justify-content: center; }
+  .nav-links {
+    position: fixed;
+    inset: 64px 0 auto 0;
+    flex-direction: column;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-4);
+    gap: var(--space-3);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
+  }
+  .nav-links.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  padding-top: var(--space-8);
+}
+
+.hero .eyebrow { margin-bottom: var(--space-3); }
+
+.hero p.lede {
+  font-size: 1.125rem;
+  color: var(--fg-muted);
+  max-width: 60ch;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  min-height: 44px;
+  transition: border-color 150ms var(--ease-out), background 150ms var(--ease-out);
+}
+.btn:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+}
+.btn.btn-primary {
+  background: var(--accent);
+  color: var(--accent-fg);
+  border-color: var(--accent);
+}
+.btn.btn-primary:hover {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* ============================================
+   Stack / skills
+   ============================================ */
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .stack-grid { grid-template-columns: 1fr; }
+}
+
+.stack-col h3 {
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+.stack-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stack-col li {
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.stack-col li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* ============================================
+   Tools grid
+   ============================================ */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.tool-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-align: center;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-2);
+  min-height: 96px;
+  color: var(--fg-muted);
+  transition: border-color 150ms var(--ease-out), transform 150ms var(--ease-out), background 150ms var(--ease-out);
+}
+
+.tool-tile:hover,
+.tool-tile:focus-visible {
+  border-color: var(--accent);
+  background: var(--bg-elevated-hover);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: var(--fg);
+}
+
+/* Monochrome brand icons (simple-icons): default to a black fill, so invert
+   to a light silhouette that matches the dark theme. */
+.tool-logo-mono {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tool-logo-mono img {
+  width: 100%;
+  height: 100%;
+  filter: invert(1);
+  opacity: 0.7;
+  transition: opacity 150ms var(--ease-out);
+}
+.tool-tile:hover .tool-logo-mono img,
+.tool-tile:focus-visible .tool-logo-mono img {
+  opacity: 1;
+}
+
+/* Full-colour logos (project avatars): sit on a light chip so original
+   colours stay legible against the dark card. */
+.tool-logo-chip {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #F8FAFC;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.tool-logo-chip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 3px;
+}
+
+.tool-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+/* ============================================
+   Project cards
+   ============================================ */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  transition: border-color 200ms var(--ease-out), transform 200ms var(--ease-out);
+}
+
+.card:hover {
+  border-color: var(--accent);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.card h3 { margin: 0; }
+
+.status {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px var(--space-2);
+  border-radius: 999px;
+  white-space: nowrap;
+  border: 1px solid currentColor;
+}
+
+.status-live { color: var(--accent); }
+.status-progress { color: #FBBF24; }
+.status-planned { color: var(--fg-muted); }
+
+.card p { color: var(--fg-muted); font-size: 0.9375rem; margin-bottom: var(--space-3); }
+
+.card-link {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+}
+
+/* ============================================
+   Case study / writing (placeholder blocks)
+   ============================================ */
+.placeholder-block {
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.placeholder-block .status { margin-bottom: var(--space-3); display: inline-block; }
+
+/* ============================================
+   Contact / footer
+   ============================================ */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.site-footer {
+  padding: var(--space-5) 0;
+  color: var(--fg-muted);
+  font-size: 0.8125rem;
+  font-family: var(--font-mono);
+}
+
+.site-footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* ============================================
+   Reveal-on-scroll (respects reduced motion via base rule above)
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 400ms var(--ease-out), transform 400ms var(--ease-out);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
