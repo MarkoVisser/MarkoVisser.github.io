@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marko Visser | Domain Engineer, Applied AI</title>
+  <meta name="description" content="Mechatronic engineer building and deploying production agentic AI on regulated engineering workflows.">
+
+  <!-- TODO: replace with your real social preview details before going live -->
+  <meta property="og:title" content="Marko Visser | Domain Engineer, Applied AI">
+  <meta property="og:description" content="Mechatronic engineer building and deploying production agentic AI on regulated engineering workflows.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="#top" class="logo">marko.visser</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#case-study">Case Study</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Mechatronic Engineer / Applied AI</p>
+        <h1>I build the systems that keep regulated engineering work honest, then automate the parts that don't need a human.</h1>
+        <p class="lede">
+          Namibia-based Mechatronic Engineer. I design electronic and electrical building services
+          (ICT networks, surveillance and access control, AV, UPS and generator backup, LV distribution
+          to SANS 10142-1) on commercial, government, water, mining and rail projects. Off the clock,
+          I run a self-hosted, nine-agent AI platform that does real work against that same messy,
+          regulated domain. Not a demo.
+        </p>
+        <div class="hero-links">
+          <!-- TODO: restore mailto button once public email decided -->
+          <a class="btn btn-primary" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">Message me on LinkedIn</a>
+          <a class="btn" href="https://github.com/MarkoVisser" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container reveal">
+        <p class="eyebrow">About</p>
+        <h2>Two disciplines, one problem</h2>
+        <p>
+          I'm a Mechatronic Engineer at a consulting engineering firm in Windhoek, working toward Pr.Eng
+          registration. Day to day I design electronic and electrical building services: ICT networks,
+          surveillance and access control, AV, UPS and generator backup, and LV distribution to SANS 10142-1.
+          Mostly commercial offices and government buildings, with wastewater treatment, mining and rail work
+          that extends into industrial automation: PLCs, instrumentation and SCADA. I handle contract
+          administration where projects need it. The kind of work where a wrong diversity factor or a missed
+          notice period has real consequences.
+        </p>
+        <p>
+          Before consulting: pharmaceutical automation (BMS, HVAC and environmental monitoring under GxP and
+          FDA rules), agricultural IoT, remote support engineering for a US crypto company, and five years
+          self-employed building bespoke IoT and gamification hardware, from the PCB up to the server stack.
+        </p>
+        <p>
+          I got tired of watching engineering work done by hand when most of it is pattern-matching against a
+          standard. So I built a self-hosted multi-agent platform (nine agents, running on my own hardware:
+          Directus/PostgreSQL, Chroma RAG over my notes, MCP tooling, Tailscale/Syncthing/Forgejo underneath)
+          and started pointing it at the actual work: load calculations, contract clause lookups, document
+          drafting. I author the Claude skills that encode that domain knowledge.
+        </p>
+        <p>
+          The interesting problems aren't in generic chatbots. They're in getting agentic AI to hold up inside
+          workflows that are regulated, inconsistent, and unforgiving of hallucination. That's what I want to
+          keep doing, for more than one employer's internal tooling.
+        </p>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack">
+      <div class="container reveal">
+        <p class="eyebrow">Stack</p>
+        <h2>What I actually use</h2>
+        <div class="stack-grid">
+          <div class="stack-col">
+            <h3>Engineering</h3>
+            <ul>
+              <li>ICT network design: fibre/copper, switching, firewalls, VLANs, PoE</li>
+              <li>Surveillance, access control &amp; AV systems</li>
+              <li>UPS &amp; diesel generator backup design</li>
+              <li>SANS 10142-1 / IEC 60364 LV distribution design</li>
+              <li>Industrial automation: PLC, SCADA, instrumentation</li>
+              <li>Contract administration (FIDIC, GCC 2015, JBCC 6.2, NEC4)</li>
+              <li>Pr.Eng registration in progress</li>
+            </ul>
+          </div>
+          <div class="stack-col">
+            <h3>Applied AI</h3>
+            <ul>
+              <li>Multi-agent orchestration (Hermes, self-hosted, 9 agents)</li>
+              <li>MCP server authorship</li>
+              <li>RAG over domain knowledge (Chroma + Obsidian)</li>
+              <li>Directus / PostgreSQL as the structured backend</li>
+              <li>Claude skill authorship (elec-dist-design, project-contract-admin, and others)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS -->
+    <section id="tools">
+      <div class="container reveal">
+        <p class="eyebrow">Tools</p>
+        <h2>What's running on the bench</h2>
+        <p>
+          Home lab, mesh network, and self-hosted infra I actually run, not a wishlist. Each link goes to
+          the official site or repo.
+        </p>
+        <div class="tool-grid">
+
+          <a class="tool-tile" href="https://grafana.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/grafana.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Grafana</span>
+          </a>
+          <a class="tool-tile" href="https://www.home-assistant.io" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/homeassistant.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Home Assistant</span>
+          </a>
+          <a class="tool-tile" href="https://nodered.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/nodered.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Node-RED</span>
+          </a>
+          <a class="tool-tile" href="https://www.postgresql.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/postgresql.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">PostgreSQL</span>
+          </a>
+          <a class="tool-tile" href="https://www.influxdata.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/influxdb.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">InfluxDB</span>
+          </a>
+          <a class="tool-tile" href="https://mosquitto.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/mqtt.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">MQTT (Mosquitto)</span>
+          </a>
+          <a class="tool-tile" href="https://www.docker.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/docker.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Docker</span>
+          </a>
+          <a class="tool-tile" href="https://www.wireguard.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/wireguard.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">WireGuard</span>
+          </a>
+          <a class="tool-tile" href="https://tailscale.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/tailscale.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Tailscale</span>
+          </a>
+          <a class="tool-tile" href="https://git-scm.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/git.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Git</span>
+          </a>
+          <a class="tool-tile" href="https://forgejo.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/forgejo.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Forgejo</span>
+          </a>
+          <a class="tool-tile" href="https://qgis.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/qgis.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">QGIS</span>
+          </a>
+          <a class="tool-tile" href="https://www.arduino.cc" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/arduino.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Arduino</span>
+          </a>
+          <a class="tool-tile" href="https://www.raspberrypi.com" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/raspberrypi.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">Raspberry Pi</span>
+          </a>
+          <a class="tool-tile" href="https://www.espressif.com/en/products/socs/esp32" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-mono"><img src="assets/logos/espressif.svg" alt="" loading="lazy"></span>
+            <span class="tool-name">ESP32</span>
+          </a>
+          <a class="tool-tile" href="https://meshtastic.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-chip"><img src="assets/logos/meshtastic.png" alt="" loading="lazy"></span>
+            <span class="tool-name">Meshtastic</span>
+          </a>
+          <a class="tool-tile" href="https://github.com/meshcore-dev/MeshCore" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-chip"><img src="assets/logos/meshcore.png" alt="" loading="lazy"></span>
+            <span class="tool-name">MeshCore</span>
+          </a>
+          <a class="tool-tile" href="https://lora-alliance.org" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-chip"><img src="assets/logos/lorawan.png" alt="" loading="lazy"></span>
+            <span class="tool-name">LoRaWAN</span>
+          </a>
+          <a class="tool-tile" href="https://www.chirpstack.io" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-chip"><img src="assets/logos/chirpstack.png" alt="" loading="lazy"></span>
+            <span class="tool-name">ChirpStack</span>
+          </a>
+          <a class="tool-tile" href="https://frigate.video" target="_blank" rel="noopener">
+            <span class="tool-logo tool-logo-chip"><img src="assets/logos/frigate.png" alt="" loading="lazy"></span>
+            <span class="tool-name">Frigate NVR</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container reveal">
+        <p class="eyebrow">Projects</p>
+        <h2>Public work</h2>
+        <p>
+          Selected tools, published as they're sanitised. Full write-up on what's open vs. held back is
+          coming with the case study below.
+        </p>
+        <div class="card-grid">
+
+          <div class="card">
+            <div class="card-header">
+              <h3>elec-dist-design</h3>
+              <span class="status status-progress">In progress</span>
+            </div>
+            <p>Schema-driven electrical distribution board design and validation for SANS 10142/IEC 60364 systems. Open-core: schema, validators, and generators are public; deep verification logic stays internal.</p>
+            <a class="card-link" href="https://github.com/MarkoVisser/elec-dist-design" target="_blank" rel="noopener">github.com/MarkoVisser/elec-dist-design →</a>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>sans-calc-mcp</h3>
+              <span class="status status-progress">In progress</span>
+            </div>
+            <p>An MCP server exposing SANS/IEC electrical calculations as tools an agent can call directly, extracted from the elec-dist-design calc engine.</p>
+            <a class="card-link" href="#" aria-disabled="true">Repo coming soon</a>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>vault-rag</h3>
+              <span class="status status-planned">Planned</span>
+            </div>
+            <p>Chroma-backed RAG over an Obsidian vault: how I give agents durable, searchable memory of my own notes and project history.</p>
+            <a class="card-link" href="#" aria-disabled="true">Repo coming soon</a>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Hermes write-up</h3>
+              <span class="status status-progress">Draft</span>
+            </div>
+            <p>Lessons from running a nine-agent, self-hosted platform against real engineering work: the migration from OpenClaw to Hermes, what broke, and what I'd do differently.</p>
+            <a class="card-link" href="#writing">Read more →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDY -->
+    <section id="case-study">
+      <div class="container reveal">
+        <p class="eyebrow">Case Study</p>
+        <h2>AI adoption at a consulting engineering firm</h2>
+        <div class="placeholder-block">
+          <span class="status status-planned">Pending sign-off</span>
+          <p>
+            A full write-up of rolling out agentic AI tooling inside a working engineering consultancy,
+            anonymised where needed, with director sign-off before publishing. This is the flagship piece:
+            real workflows, real constraints, real results, not a lab demo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WRITING -->
+    <section id="writing">
+      <div class="container reveal">
+        <p class="eyebrow">Writing</p>
+        <h2>Notes from the build</h2>
+        <div class="placeholder-block">
+          <span class="status status-progress">Draft</span>
+          <p>
+            First piece: what it actually takes to run a nine-agent system on your own hardware against
+            real engineering work, including the move from OpenClaw to Hermes. Coming soon.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Get in touch</h2>
+        <p>Open to Applied AI / Forward Deployed Engineer roles and short-term AI implementation work for engineering, QS, and legal firms.</p>
+        <div class="contact-links">
+          <!-- TODO: restore mailto button once public email decided -->
+          <a class="btn btn-primary" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/MarkoVisser" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© <span id="year"></span> Marko Visser</span>
+      <span>Windhoek, Namibia / UTC+2</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
