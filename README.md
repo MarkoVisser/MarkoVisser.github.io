@@ -52,11 +52,11 @@ The homepage Writing section shows the latest piece as a hand-maintained card; u
    git add .
    git commit -m "Initial portfolio site"
    git branch -M main
-   git remote add origin https://github.com/REPLACE_WITH_USERNAME/REPLACE_WITH_REPO.git
+   git remote add origin https://MarkoVisser@github.com/MarkoVisser/MarkoVisser.github.io.git
    git push -u origin main
    ```
 3. In the repo: **Settings → Pages → Build and deployment → Source: Deploy from a branch**. Branch: `main`, folder: `/ (root)`. Save.
-4. Site is live at `https://REPLACE_WITH_USERNAME.github.io/REPLACE_WITH_REPO/` (or `https://REPLACE_WITH_USERNAME.github.io/` if you used the `username.github.io` repo name) within a minute or two.
+4. Site is live at `https://markovisser.github.io/articles/ ` (or `https://markovisser.github.io/` if you used the `username.github.io` repo name) within a minute or two.
 
 ### Custom domain (optional)
 
