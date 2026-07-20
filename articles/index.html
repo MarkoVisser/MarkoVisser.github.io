@@ -1,0 +1,28 @@
+---
+layout: default
+title: Articles
+description: Writing on software practices for engineering design, agentic AI in practice, and electrical building services.
+---
+<section>
+  <div class="container">
+    <p class="eyebrow">Writing</p>
+    <h2>Articles</h2>
+    <p>
+      Software practices for engineering design, agentic AI in practice, and the odd piece of
+      domain depth. Long-form lives here; the same pieces run on
+      <a href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>.
+    </p>
+    <div class="article-list">
+      {% assign sorted = site.articles | sort: "date" | reverse %}
+      {% for a in sorted %}
+      <a class="article-row" href="{{ a.url }}">
+        <span class="article-row-date">{{ a.date | date: "%-d %b %Y" }}</span>
+        <span class="article-row-main">
+          <span class="article-row-title">{{ a.title }}</span>
+          {% if a.series %}<span class="article-row-series">{{ a.series }}{% if a.part %} · part {{ a.part }} of {{ a.parts_total }}{% endif %}</span>{% endif %}
+        </span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

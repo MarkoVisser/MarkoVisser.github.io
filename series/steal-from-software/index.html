@@ -1,0 +1,68 @@
+---
+layout: default
+title: "Steal from software"
+description: "A six-part series on what engineering design offices can take from software teams: version control, collaboration, tested designs, a data spine, AI-readiness, and the living asset."
+---
+<section>
+  <div class="container">
+    <p class="eyebrow">Series</p>
+    <h2>Steal from software</h2>
+    <p>
+      Good industries steal. Surgeons took the checklist from aviation; hospitals took lean from
+      Toyota. This series argues engineering design should take its document and data practices
+      from software teams, who solved our coordination problems in the 1990s and left the tools
+      lying around, free.
+    </p>
+    <p>Six parts, published fortnightly.</p>
+
+    <div class="article-list">
+      {% assign published = site.articles | where: "series", "Steal from software" | sort: "part" %}
+      {% for a in published %}
+      <a class="article-row" href="{{ a.url }}">
+        <span class="article-row-date">Part {{ a.part }}</span>
+        <span class="article-row-main">
+          <span class="article-row-title">{{ a.title }}</span>
+          <span class="article-row-series">Published {{ a.date | date: "%-d %b %Y" }}</span>
+        </span>
+      </a>
+      {% endfor %}
+
+      <!-- Upcoming parts: replace each row with the published article as it lands -->
+      <div class="article-row article-row-upcoming">
+        <span class="article-row-date">Part 2</span>
+        <span class="article-row-main">
+          <span class="article-row-title">Collaboration without the master-file queue</span>
+          <span class="article-row-series">Upcoming</span>
+        </span>
+      </div>
+      <div class="article-row article-row-upcoming">
+        <span class="article-row-date">Part 3</span>
+        <span class="article-row-main">
+          <span class="article-row-title">Tested designs: the firm that can't make the same mistake twice</span>
+          <span class="article-row-series">Upcoming</span>
+        </span>
+      </div>
+      <div class="article-row article-row-upcoming">
+        <span class="article-row-date">Part 4</span>
+        <span class="article-row-main">
+          <span class="article-row-title">The data spine</span>
+          <span class="article-row-series">Upcoming</span>
+        </span>
+      </div>
+      <div class="article-row article-row-upcoming">
+        <span class="article-row-date">Part 5</span>
+        <span class="article-row-main">
+          <span class="article-row-title">AI-ready by accident</span>
+          <span class="article-row-series">Upcoming</span>
+        </span>
+      </div>
+      <div class="article-row article-row-upcoming">
+        <span class="article-row-date">Part 6</span>
+        <span class="article-row-main">
+          <span class="article-row-title">The living asset</span>
+          <span class="article-row-series">Upcoming</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -17,7 +17,7 @@ navLinks.querySelectorAll('a').forEach((link) => {
   });
 });
 
-// Reveal-on-scroll — skipped entirely for reduced-motion users
+// Reveal-on-scroll, skipped entirely for reduced-motion users
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (prefersReducedMotion) {

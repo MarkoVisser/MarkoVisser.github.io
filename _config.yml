@@ -1,0 +1,21 @@
+title: Marko Visser
+description: Mechatronic engineer building and deploying production agentic AI on regulated engineering workflows.
+url: https://markovisser.github.io
+
+markdown: kramdown
+
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: article
+      parts_total: 6
+
+exclude:
+  - README.md

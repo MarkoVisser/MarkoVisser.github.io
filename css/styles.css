@@ -1,6 +1,6 @@
 /* ============================================
    Design tokens
-   Source: UI/UX Pro Max — "Developer Tool / IDE"
+   Source: UI/UX Pro Max "Developer Tool / IDE"
    palette + "Developer Mono" type pairing
    ============================================ */
 :root {
@@ -478,6 +478,114 @@ section:last-of-type { border-bottom: none; }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ============================================
+   Articles (Jekyll: article pages + list rows)
+   ============================================ */
+.article-page { padding-top: var(--space-7); }
+
+.article-header h1 { max-width: 24ch; }
+
+.article-meta {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+.article-cover {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.article-body h2 {
+  margin-top: var(--space-6);
+  font-size: 1.375rem;
+}
+
+.article-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  overflow-wrap: anywhere;
+}
+
+.article-body pre {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  overflow-x: auto;
+}
+.article-body pre code { background: none; border: none; padding: 0; }
+
+.article-body blockquote {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--accent);
+  color: var(--fg-muted);
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: var(--space-6) 0;
+}
+
+.article-body em { color: var(--fg-muted); }
+
+.article-footer {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-4);
+}
+
+.article-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+}
+.article-row:hover { text-decoration: none; }
+.article-row:hover .article-row-title { color: var(--accent); }
+
+.article-row-date {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.article-row-main { display: flex; flex-direction: column; gap: var(--space-1); }
+
+.article-row-title { color: var(--fg); font-weight: 500; }
+
+.article-row-series {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+.article-row-upcoming .article-row-date,
+.article-row-upcoming .article-row-title { color: var(--fg-muted); }
+
+@media (max-width: 600px) {
+  .article-row { grid-template-columns: 1fr; gap: var(--space-1); }
 }
 
 /* Experience timeline */

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article>
+  <section class="article-page">
+    <div class="container">
+      <header class="article-header">
+        {% if page.series %}<p class="eyebrow"><a href="{{ page.series_url }}">{{ page.series }}</a>{% if page.part %} · Part {{ page.part }} of {{ page.parts_total }}{% endif %}</p>{% endif %}
+        <h1>{{ page.title }}</h1>
+        <p class="article-meta">{{ page.date | date: "%-d %B %Y" }}{% if page.linkedin_url %} · <a href="{{ page.linkedin_url }}" target="_blank" rel="noopener">Also published on LinkedIn</a>{% endif %}</p>
+      </header>
+
+      {% if page.cover %}<img class="article-cover" src="{{ page.cover }}" alt="{{ page.cover_alt | default: page.title }}">{% endif %}
+
+      <div class="article-body">
+{{ content }}
+      </div>
+
+      <footer class="article-footer">
+        <p><a href="/articles/">← All articles</a>{% if page.series_url %} · <a href="{{ page.series_url }}">About this series</a>{% endif %}</p>
+      </footer>
+    </div>
+  </section>
+</article>
