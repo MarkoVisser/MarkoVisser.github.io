@@ -16,10 +16,10 @@ description: "A six-part series on what engineering design offices can take from
     <p>Six parts, published fortnightly.</p>
 
     <div class="article-list">
-      {% assign published = site.articles | where: "series", "Steal from software" | sort: "part" %}
+      {% assign published = site.articles | where: "series", "Steal from software" | sort: "date" %}
       {% for a in published %}
       <a class="article-row" href="{{ a.url }}">
-        <span class="article-row-date">Part {{ a.part }}</span>
+        <span class="article-row-date">{% if a.part %}Part {{ a.part }}{% else %}{{ a.label | default: "Companion" }}{% endif %}</span>
         <span class="article-row-main">
           <span class="article-row-title">{{ a.title }}</span>
           <span class="article-row-series">Published {{ a.date | date: "%-d %b %Y" }}</span>
