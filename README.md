@@ -1,71 +1,54 @@
 # Portfolio site
 
-Plain HTML/CSS/JS, no build step. Dark, technical/minimal style: palette and type pairing pulled from the UI/UX Pro Max "Developer Tool / IDE" + "Developer Mono" recommendations.
+Personal site for Marko Visser, live at https://markovisser.github.io. Plain Jekyll on GitHub Pages, no local build step required. Dark, technical style: palette and type pairing from the UI/UX Pro Max "Developer Tool / IDE" and "Developer Mono" recommendations.
 
-**Publication decision (18 Jul 2026):** public GitHub repo + Pages, but NO mention of the employer's name anywhere on the site, in the repo, or in commit history. The firm stays "a consulting engineering firm". Copy rules: Marko's voice per humanize-text, no em dashes in page copy.
+**Publication rule (18 Jul 2026):** public repo and Pages, but the employer is never named anywhere on the site, in the repo, or in commit history. The firm stays "a consulting engineering firm". Page copy is written in Marko's voice per humanize-text: no em dashes, no hype register.
 
-## Before you publish, fill these in
+## Layout and navigation
 
-Search the codebase for these placeholders and replace them:
+Every page shares one header, defined once in `_layouts/default.html`: a primary bar with About, Articles, Projects, and a LinkedIn button that doubles as the contact link. The home page uses that same layout, so there is a single source of truth for the nav (it used to be a standalone file with its own copy).
 
-- `REPLACE_WITH_PUBLIC_EMAIL` (2 places in `index.html`): the email address you want public. Don't reuse a private/alias address without deciding that's intentional.
-- `REPLACE_WITH_USERNAME` (2 places in `index.html`): your GitHub handle. (LinkedIn is already filled: linkedin.com/in/marko-visser.)
-- The `<!-- TODO -->` Open Graph block in `<head>`: fine as-is, but double check the description once the site has real project links.
+`js/main.js` builds an "on this page" rail from the sections of the current page and highlights the one you are reading as you scroll. On article pages it falls back to a table of contents built from the headings. The rail sits in the left gutter on wide screens (about 1300px and up) and hides on narrower screens, where the top bar carries navigation on its own.
 
-```bash
-grep -rn "REPLACE_WITH" .
-```
-
-## Structure (Jekyll, added 20 Jul 2026)
-
-GitHub Pages builds Jekyll automatically, so no local tooling and no CI are needed. Articles are markdown; Pages renders them.
+## Structure
 
 ```
-_config.yml              Jekyll config (articles collection)
-_layouts/default.html    site shell (head, nav, footer); nav here, not index.html, for subpages
+_config.yml              Jekyll config (articles collection, kramdown)
+Gemfile                  gems for an optional local `jekyll serve`; Pages builds without it
+_layouts/default.html    shared shell: head, the one nav, footer, on-this-page rail slot
 _layouts/article.html    article page (series eyebrow, title, date, cover, LinkedIn cross-link)
-_articles/               one .md per article → /articles/<filename>/
+_articles/               one .md per article -> /articles/<filename>/
+index.html               home page (front matter: layout: default); hero + About, Experience, Stack, Tools, Projects, Writing
 articles/index.html      auto-generated article list
+projects/index.html      public tools and repos (BusJam, sans-calc-mcp, vault-rag)
+resources/index.html     redirect to /projects/, kept so the old URL still resolves
 series/steal-from-software/  series landing page (update "Upcoming" rows as parts publish)
-resources/index.html     public tools shelf (BusJam, sans-calc-mcp)
-assets/covers/           article cover images (1920×1080, monospace filename cards)
-index.html               the original single page, served as-is (no front matter = static passthrough)
-css/styles.css           shared tokens + article styles appended at the bottom
+assets/covers/           article cover images (1920x1080, monospace filename cards)
+assets/logos/            tool logos for the home Tools grid
+css/styles.css           design tokens, shared components, nav rail, article styles
+js/main.js               footer year, mobile nav, on-this-page rail, reveal-on-scroll
 ```
 
-### Publishing an article (runbook)
+## Publishing an article (runbook)
 
 1. Copy the master markdown from `../brand/articles/...` into `_articles/<series-slug>-<part>-<name>.md`.
 2. Add front matter: `title`, `date`, `description`, `series`, `series_url`, `part`, `linkedin_url`, `cover`. Strip the internal draft-note line and publish checklist.
 3. Drop the cover PNG into `assets/covers/`.
-4. On the series page, replace that part's "Upcoming" row with nothing (the published loop picks it up automatically).
-5. Push. Pages rebuilds in about a minute.
+4. On the series page, delete that part's "Upcoming" row. The published loop picks it up automatically.
+5. Update the home page Writing section, which shows the latest pieces as hand-maintained cards.
+6. Commit and push. Pages rebuilds in about a minute.
 
-The homepage Writing section shows the latest piece as a hand-maintained card; update it on each publish.
+## Deploy
 
-## Deploy to GitHub Pages
+The repo is already connected to Pages (Settings -> Pages -> Deploy from a branch, `main`, `/ (root)`). To publish changes, push to `main` and Pages rebuilds automatically. No Node, no bundler, no CI.
 
-1. Create a new GitHub repo (e.g. `yourusername.github.io` for a root domain, or any name for a project page).
-2. Push this folder's contents to the repo's default branch:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial portfolio site"
-   git branch -M main
-   git remote add origin https://MarkoVisser@github.com/MarkoVisser/MarkoVisser.github.io.git
-   git push -u origin main
-   ```
-3. In the repo: **Settings → Pages → Build and deployment → Source: Deploy from a branch**. Branch: `main`, folder: `/ (root)`. Save.
-4. Site is live at `https://markovisser.github.io/articles/ ` (or `https://markovisser.github.io/` if you used the `username.github.io` repo name) within a minute or two.
+To preview locally (optional): `bundle install`, then `bundle exec jekyll serve`.
 
 ### Custom domain (optional)
 
-Add a `CNAME` file at the root containing just your domain (e.g. `markovisser.dev`), and point your DNS:
-- Apex domain: four `A` records to GitHub's IPs (185.199.108.153, .109.153, .110.153, .111.153)
-- Subdomain (e.g. `www`): `CNAME` record to `REPLACE_WITH_USERNAME.github.io`
+Add a `CNAME` file at the root containing the domain, then point DNS:
 
-Then set the custom domain in the same Pages settings page.
+- Apex domain: four `A` records to GitHub's IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153)
+- Subdomain (e.g. `www`): a `CNAME` record to `markovisser.github.io`
 
-## No build step needed
-
-This is intentionally plain HTML/CSS/JS: edit the files directly and push. No Node, no bundler, no CI required to deploy.
+Then set the custom domain in the Pages settings.
