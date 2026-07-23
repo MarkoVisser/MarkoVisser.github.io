@@ -1,44 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marko Visser | Domain Engineer, Applied AI</title>
-  <meta name="description" content="Mechatronic engineer building and deploying production agentic AI on regulated engineering workflows.">
-
-  <!-- TODO: replace with your real social preview details before going live -->
-  <meta property="og:title" content="Marko Visser | Domain Engineer, Applied AI">
-  <meta property="og:description" content="Mechatronic engineer building and deploying production agentic AI on regulated engineering workflows.">
-  <meta property="og:type" content="website">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-  <header class="site-header">
-    <div class="container">
-      <a href="#top" class="logo">marko.visser</a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#stack">Stack</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#case-study">Case Study</a></li>
-        <li><a href="#writing">Writing</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main id="top">
+---
+layout: default
+---
 
     <!-- HERO -->
     <section class="hero">
@@ -53,10 +15,8 @@
           regulated domain. Not a demo.
         </p>
         <div class="hero-links">
-          <!-- TODO: restore mailto button once public email decided -->
-          <a class="btn btn-primary" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">Message me on LinkedIn</a>
           <a class="btn" href="https://github.com/MarkoVisser" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-primary" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </section>
@@ -260,8 +220,8 @@
         <p class="eyebrow">Projects</p>
         <h2>Public work</h2>
         <p>
-          Selected tools, published as they're sanitised. Full write-up on what's open vs. held back is
-          coming with the case study below.
+          Selected tools from my own workflow, published as they're sanitised. Open-core: the schema,
+          validators and generators are public; the deeper verification stays internal.
         </p>
         <div class="card-grid">
 
@@ -270,7 +230,7 @@
               <h3>BusJam</h3>
               <span class="status status-progress">In progress</span>
             </div>
-            <p>Distribution boards as YAML, deliverables generated: DB schedules, hierarchy diagrams, load-flow Sankeys. Think WireViz, but for distribution boards. Open-core: schema, validators and generators public; deep verification stays internal.</p>
+            <p>Distribution boards as YAML, deliverables generated: DB schedules, hierarchy diagrams, load-flow Sankeys. Think WireViz, but for distribution boards.</p>
             <a class="card-link" href="https://github.com/MarkoVisser/busjam" target="_blank" rel="noopener">github.com/MarkoVisser/busjam →</a>
           </div>
 
@@ -283,41 +243,8 @@
             <a class="card-link" href="https://github.com/MarkoVisser/sans-calc-mcp" target="_blank" rel="noopener">github.com/MarkoVisser/sans-calc-mcp →</a>
           </div>
 
-          <div class="card">
-            <div class="card-header">
-              <h3>vault-rag</h3>
-              <span class="status status-planned">Planned</span>
-            </div>
-            <p>Chroma-backed RAG over an Obsidian vault: how I give agents durable, searchable memory of my own notes and project history.</p>
-            <a class="card-link" href="#" aria-disabled="true">Repo coming soon</a>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h3>Hermes write-up</h3>
-              <span class="status status-progress">Draft</span>
-            </div>
-            <p>Lessons from running a nine-agent, self-hosted platform against real engineering work: the migration from OpenClaw to Hermes, what broke, and what I'd do differently.</p>
-            <a class="card-link" href="#writing">Read more →</a>
-          </div>
-
         </div>
-      </div>
-    </section>
-
-    <!-- CASE STUDY -->
-    <section id="case-study">
-      <div class="container reveal">
-        <p class="eyebrow">Case Study</p>
-        <h2>AI adoption at a consulting engineering firm</h2>
-        <div class="placeholder-block">
-          <span class="status status-planned">Pending sign-off</span>
-          <p>
-            A full write-up of rolling out agentic AI tooling inside a working engineering consultancy,
-            anonymised where needed, with director sign-off before publishing. This is the flagship piece:
-            real workflows, real constraints, real results, not a lab demo.
-          </p>
-        </div>
+        <p class="xp-note"><a href="/projects/">See all projects →</a></p>
       </div>
     </section>
 
@@ -355,31 +282,3 @@
         <p class="xp-note"><a href="/articles/">All articles →</a> · <a href="/series/steal-from-software/">About the series →</a></p>
       </div>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="container reveal">
-        <p class="eyebrow">Contact</p>
-        <h2>Get in touch</h2>
-        <p>Open to Applied AI / Forward Deployed Engineer roles and short-term AI implementation work for engineering, QS, and legal firms.</p>
-        <div class="contact-links">
-          <!-- TODO: restore mailto button once public email decided -->
-          <a class="btn btn-primary" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="https://github.com/MarkoVisser" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">LinkedIn</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <span>© <span id="year"></span> Marko Visser</span>
-      <span>Windhoek, Namibia / UTC+2</span>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
-</body>
-</html>

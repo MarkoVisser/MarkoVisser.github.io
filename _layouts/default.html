@@ -26,14 +26,18 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#projects">Projects</a></li>
+        <li><a href="{% if page.url == '/' %}#about{% else %}/#about{% endif %}">About</a></li>
         <li><a href="/articles/">Articles</a></li>
-        <li><a href="/resources/">Resources</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/projects/">Projects</a></li>
+        <li><a class="nav-cta" href="https://linkedin.com/in/marko-visser" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8h4.5V23h-4.5V8zM8 8h4.3v2.05h.06c.6-1.08 2.06-2.22 4.24-2.22 4.54 0 5.38 2.82 5.38 6.49V23h-4.5v-6.78c0-1.62-.03-3.7-2.26-3.7-2.26 0-2.6 1.76-2.6 3.58V23H8V8z"/></svg>
+          LinkedIn
+        </a></li>
       </ul>
     </div>
   </header>
+
+  <nav class="page-rail" id="pageRail" aria-label="On this page"></nav>
 
   <main id="top">
 {{ content }}

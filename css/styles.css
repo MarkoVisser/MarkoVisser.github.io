@@ -166,6 +166,23 @@ section:last-of-type { border-bottom: none; }
 }
 .nav-links a:hover { color: var(--fg); text-decoration: none; }
 
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 14px;
+}
+.nav-cta:hover {
+  color: var(--fg);
+  text-decoration: none;
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+}
+.nav-cta svg { width: 15px; height: 15px; }
+
 .nav-toggle {
   display: none;
   background: none;
@@ -195,6 +212,54 @@ section:last-of-type { border-bottom: none; }
     opacity: 1;
     pointer-events: auto;
   }
+}
+
+/* ============================================
+   On-this-page rail (scrollspy, wide screens only)
+   ============================================ */
+.page-rail { display: none; }
+.page-rail:empty { display: none; }
+
+@media (min-width: 1300px) {
+  .page-rail:not(:empty) {
+    display: block;
+    position: fixed;
+    top: 96px;
+    left: calc(50% - 650px);
+    width: 150px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    z-index: 50;
+  }
+}
+
+.rail-title {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  margin: 0 0 var(--space-2);
+  padding-left: 13px;
+}
+.page-rail ul { list-style: none; margin: 0; padding: 0; }
+.page-rail a {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  padding: 5px 0 5px 12px;
+  border-left: 2px solid var(--border);
+  transition: color 150ms var(--ease-out), border-color 150ms var(--ease-out);
+}
+.page-rail a:hover {
+  color: var(--fg);
+  text-decoration: none;
+  border-left-color: var(--fg-muted);
+}
+.page-rail a.is-active {
+  color: var(--accent);
+  border-left-color: var(--accent);
 }
 
 /* ============================================
@@ -430,29 +495,11 @@ section:last-of-type { border-bottom: none; }
   font-size: 0.8125rem;
 }
 
-/* ============================================
-   Case study / writing (placeholder blocks)
-   ============================================ */
-.placeholder-block {
-  background: var(--bg-elevated);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius);
-  padding: var(--space-5);
-  margin-top: var(--space-4);
-}
-
-.placeholder-block .status { margin-bottom: var(--space-3); display: inline-block; }
+.card-link-muted { color: var(--fg-muted); }
 
 /* ============================================
-   Contact / footer
+   Footer
    ============================================ */
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-4);
-}
-
 .site-footer {
   padding: var(--space-5) 0;
   color: var(--fg-muted);
